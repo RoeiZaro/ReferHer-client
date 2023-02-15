@@ -10,19 +10,23 @@ const App = () => {
   if (0)
     return (
       <NavigationContainer>
-        <MyTabs />
+        <userProvider>
+          <MyTabs />
+        </userProvider>
       </NavigationContainer>
     );
   else
     return (
       <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen
-            name="Home"
-            component={HomePage}
-            options={{ title: "ReferHer" }}
-          />
-        </Stack.Navigator>
+        <userProvider>
+          <Stack.Navigator>
+            <Stack.Screen
+              name="Home"
+              component={HomePage}
+              options={{ title: "ReferHer" }}
+            />
+          </Stack.Navigator>
+        </userProvider>
       </NavigationContainer>
     );
 };
