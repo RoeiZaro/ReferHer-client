@@ -8,7 +8,7 @@ import { useForm, Controller } from "react-hook-form";
 import { useAsyncStorage } from "@react-native-async-storage/async-storage";
 import axios from "axios";
 
-export default function App() {
+export default function LoginPage() {
   const { user, setUser, setToken } = useContext(UserContext);
   const navigation = useNavigation();
   const { setItem } = useAsyncStorage("token");

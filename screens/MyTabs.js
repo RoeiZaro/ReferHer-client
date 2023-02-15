@@ -5,22 +5,7 @@ import * as Icons from "react-native-heroicons/solid";
 import HomePage from "./PreLoginPages/HomePage";
 import AboutUsPage from "./AboutUsPage";
 import { UserContext } from "../hooks/UuserContext";
-
-function Feed() {
-  return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Feed!</Text>
-    </View>
-  );
-}
-
-function Profile() {
-  return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Profile!</Text>
-    </View>
-  );
-}
+import ProfileTab from "./Tabs/ProfileTab";
 
 function Notifications() {
   return (
@@ -79,7 +64,7 @@ export default function MyTabs() {
       />
       <Tab.Screen
         name="Profile"
-        component={Profile}
+        component={ProfileTab}
         options={{
           tabBarLabel: "Profile",
           tabBarIcon: ({ color, size }) => (
