@@ -32,9 +32,6 @@ function Notifications() {
 const Tab = createBottomTabNavigator();
 
 export default function MyTabs() {
-  const { user } = React.useContext(UserContext);
-  console.log(user);
-
   return (
     <Tab.Navigator
       initialRouteName="Feed"

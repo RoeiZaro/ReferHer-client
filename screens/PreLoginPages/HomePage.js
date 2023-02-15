@@ -1,4 +1,4 @@
-import { View, Text } from "react-native";
+import { View, Text, Button } from "react-native";
 import React, { useLayoutEffect } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -15,9 +15,20 @@ export default function HomePage() {
   }, []);
 
   return (
-    <SafeAreaView className="bg-purple flex-1">
-      <Statusbarr style="dark" />
-      <Text className="text-pink bg-darkpurple flex-auto">HomePage</Text>
-    </SafeAreaView>
+    <>
+      <SafeAreaView className="bg-purple justify-center">
+        <Statusbarr style="light" />
+      </SafeAreaView>
+      <View className="bg-darkpurple flex-1 ">
+        <Text className="text-pink text-center">Refer Her</Text>
+        <View className="flex-row  justify-around mt-auto pb-1">
+          <Button title="Login" onPress={() => navigation.navigate("Login")} />
+          <Button
+            title="Register"
+            onPress={() => navigation.navigate("Register")}
+          />
+        </View>
+      </View>
+    </>
   );
 }
