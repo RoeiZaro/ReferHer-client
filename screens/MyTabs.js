@@ -37,6 +37,7 @@ export default function MyTabs() {
       initialRouteName="Feed"
       screenOptions={{
         tabBarActiveTintColor: "#e91e63",
+        headerShown: false,
       }}
     >
       <Tab.Screen
