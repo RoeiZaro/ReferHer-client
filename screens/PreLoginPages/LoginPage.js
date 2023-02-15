@@ -1,7 +1,7 @@
 import { View, Text, Button, TextInput, Alert } from "react-native";
 import { useContext, useLayoutEffect } from "react";
 import { useNavigation } from "@react-navigation/native";
-import { UserContext } from "../../hooks/UserContext";
+import { UserContext } from "../../hooks/UuserContext";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar as Statusbarr } from "expo-status-bar";
 import { useForm, Controller } from "react-hook-form";
