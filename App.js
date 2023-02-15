@@ -23,7 +23,7 @@ const App = () => {
             <Stack.Screen
               name="Home"
               component={HomePage}
-              options={{ title: "ReferHer" }}
+              options={{ title: "Refer-Her" }}
             />
           </Stack.Navigator>
         </userProvider>
