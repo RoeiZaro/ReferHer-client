@@ -13,39 +13,10 @@ import MainNav from "./screens/Navigate/MainNav";
 const Stack = createNativeStackNavigator();
 
 const App = () => {
-  const { getItem } = useAsyncStorage("token");
-  const [token, setToken] = useState(null);
-  const [data, setData] = useState(null);
-
-  const readItemFromStorage = async () => {
-    const item = await getItem();
-    setToken(item);
-  };
-
-  useEffect(() => {
-    readItemFromStorage();
-  }, []);
-
-  useEffect(() => {
-    if (token) getData();
-  }, [token]);
-
-  const getData = async () => {
-    try {
-      const res = await axios.post("http://10.0.0.10:3000/getUser", {
-        token: token,
-      });
-
-      if (res.status === 200) setData(res.data.user);
-    } catch (e) {
-      console.log("78", e);
-    }
-  };
-
   return (
     <NavigationContainer>
-      <UserProvider data={data}>
-        <MainNav data={data} />
+      <UserProvider>
+        <MainNav />
       </UserProvider>
     </NavigationContainer>
   );

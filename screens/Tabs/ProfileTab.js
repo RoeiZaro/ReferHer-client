@@ -6,19 +6,17 @@ import { useAsyncStorage } from "@react-native-async-storage/async-storage";
 import { UserContext } from "../../hooks/UuserContext";
 
 const ProfileTab = () => {
-  const { setData, setUser, setToken } = useContext(UserContext);
+  const { setData, setToken } = useContext(UserContext);
   const { removeItem } = useAsyncStorage("token");
 
   const deleteItemfromStorage = async (newValue) => {
     await removeItem();
     setToken(null);
-    setUser("nujll");
+    setData(null);
   };
 
   function logout() {
     deleteItemfromStorage();
-
-    navigation.navigate("Login");
   }
   return (
     <>
@@ -26,7 +24,7 @@ const ProfileTab = () => {
         <Statusbarr style="light" />
       </SafeAreaView>
       <View className="bg-purple-800 flex-1">
-        <Button title="sign-out onPress=" />
+        <Button title="sign-out " onPress={logout} />
       </View>
     </>
   );

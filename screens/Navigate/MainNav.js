@@ -8,8 +8,8 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 const Stack = createNativeStackNavigator();
 
-const MainNav = ({ data }) => {
-  const { user } = useContext(UserContext);
+const MainNav = () => {
+  const { data } = useContext(UserContext);
   return (
     <>
       {!data ? (
