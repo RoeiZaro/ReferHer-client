@@ -7,6 +7,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import LoginPage from "./screens/PreLoginPages/LoginPage";
 import RegisterPage from "./screens/PreLoginPages/RegisterPage";
 
+
 const Stack = createNativeStackNavigator();
 
 const getData = async () => {
