@@ -3,6 +3,7 @@ import { Text, View } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import * as Icons from "react-native-heroicons/solid";
 import HomePage from "./HomePage";
+import { UserContext } from "../hooks/UserContext";
 
 function Feed() {
   return (
@@ -31,6 +32,9 @@ function Notifications() {
 const Tab = createBottomTabNavigator();
 
 export default function MyTabs() {
+  const { user } = React.useContext(UserContext);
+  console.log(user);
+
   return (
     <Tab.Navigator
       initialRouteName="Feed"
