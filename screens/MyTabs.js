@@ -6,21 +6,8 @@ import HomePage from "./PreLoginPages/HomePage";
 import AboutUsPage from "./AboutUsPage";
 import { UserContext } from "../hooks/UuserContext";
 
-function Feed() {
-  return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Feed!</Text>
-    </View>
-  );
-}
+import ProfileTab from "./Tabs/ProfileTab";
 
-function Profile() {
-  return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Profile!</Text>
-    </View>
-  );
-}
 
 function Notifications() {
   return (
@@ -34,6 +21,7 @@ function AboutUs() {
   return (
     <AboutUsPage />
   );
+
 }
 
 const Tab = createBottomTabNavigator();
@@ -62,9 +50,11 @@ export default function MyTabs() {
         name="AboutUs"
         component={AboutUs}
         options={{
+                 
           tabBarLabel: 'About Us',
           tabBarIcon: ({ color, size }) => (
             <Icons.LightBulbIcon name='bulb' color={color} size={size} />
+
           ),
         }}
       />
@@ -81,7 +71,7 @@ export default function MyTabs() {
       />
       <Tab.Screen
         name="Profile"
-        component={Profile}
+        component={ProfileTab}
         options={{
           tabBarLabel: "Profile",
           tabBarIcon: ({ color, size }) => (
