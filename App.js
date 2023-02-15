@@ -3,13 +3,11 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomePage from "./screens/HomePage";
 import MyTabs from "./screens/MyTabs";
 import UserProvider from "./hooks/UserContext";
-import { UserContext } from "./hooks/UserContext";
-import { useEffect, useContext, useState } from "react";
 
 const Stack = createNativeStackNavigator();
 
 const App = () => {
-  if (0)
+  if (1)
     return (
       <NavigationContainer>
         <UserProvider>
