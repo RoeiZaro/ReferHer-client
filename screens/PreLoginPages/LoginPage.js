@@ -23,22 +23,21 @@ export default function LoginPage() {
     formState: { errors },
   } = useForm({
     defaultValues: {
-      username: "",
+      email: "",
       password: "",
     },
   });
 
-  const login = async ({ username, password }) => {
+  const login = async ({ email, password }) => {
     try {
       const res = await axios.post("http://10.0.0.10:3000/login", {
-        username,
+        email,
         password,
       });
       if (res.status === 201) {
         alert("user not found");
       }
       if (res.status === 200) {
-        console.log(res.data);
         await writeItemToStorage(res.data.token);
         setUser(res.data.user);
         setTimeout(() => {
@@ -69,12 +68,12 @@ export default function LoginPage() {
               onBlur={onBlur}
               onChangeText={onChange}
               value={value}
-              placeholder="Username"
+              placeholder="email"
             />
           )}
-          name="username"
+          name="email"
         />
-        {errors.username && <Text>This is required.</Text>}
+        {errors.email && <Text>This is required.</Text>}
 
         <Controller
           control={control}
@@ -87,7 +86,8 @@ export default function LoginPage() {
               onBlur={onBlur}
               onChangeText={onChange}
               value={value}
-              placeholder="dd"
+              placeholder="password"
+              secureTextEntry={true}
             />
           )}
           name="password"
