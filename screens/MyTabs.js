@@ -5,7 +5,9 @@ import * as Icons from "react-native-heroicons/solid";
 import HomePage from "./PreLoginPages/HomePage";
 import AboutUsPage from "./AboutUsPage";
 import { UserContext } from "../hooks/UuserContext";
+
 import ProfileTab from "./Tabs/ProfileTab";
+
 
 function Notifications() {
   return (
@@ -16,7 +18,10 @@ function Notifications() {
 }
 
 function AboutUs() {
-  return <AboutUsPage />;
+  return (
+    <AboutUsPage />
+  );
+
 }
 
 const Tab = createBottomTabNavigator();
@@ -45,9 +50,11 @@ export default function MyTabs() {
         name="AboutUs"
         component={AboutUs}
         options={{
-          tabBarLabel: "About Us",
+                 
+          tabBarLabel: 'About Us',
           tabBarIcon: ({ color, size }) => (
-            <Icons.LightBulbIcon name="bulb" color={color} size={size} />
+            <Icons.LightBulbIcon name='bulb' color={color} size={size} />
+
           ),
         }}
       />

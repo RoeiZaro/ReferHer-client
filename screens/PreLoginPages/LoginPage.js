@@ -1,4 +1,4 @@
-import { View, Text, Button, TextInput, Alert } from "react-native";
+import { View, Text, Button, TextInput, Alert, TouchableOpacity } from "react-native";
 import { useContext, useLayoutEffect } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { UserContext } from "../../hooks/UuserContext";
@@ -28,12 +28,15 @@ export default function LoginPage() {
     },
   });
 
+
   const login = async ({ email, password }) => {
+
     try {
       const res = await axios.post("http://10.0.0.10:3000/login", {
         email,
         password,
       });
+      console.log('login esssndry')
       if (res.status === 201) {
         alert("user not found");
       }
@@ -54,47 +57,63 @@ export default function LoginPage() {
     console.log(data);
   };
   return (
-    <SafeAreaView className="bg-purple flex-1">
+    <SafeAreaView >
       <Statusbarr style="dark" />
-      <View>
-        <Controller
-          control={control}
-          rules={{
-            required: true,
-          }}
-          render={({ field: { onChange, onBlur, value } }) => (
-            <TextInput
-              className="border-solid border-2 border-b-darkpurple mb-2 p-2 text-lg"
-              onBlur={onBlur}
-              onChangeText={onChange}
-              value={value}
-              placeholder="email"
-            />
-          )}
-          name="email"
-        />
-        {errors.email && <Text>This is required.</Text>}
+      <View className="bg-purple-200 basis-full ">
+        <Text style={{
+  fontSize: 64,
+  fontWeight: 'bold',
+  textShadowColor: 'rgba(0, 0, 0, 0.25)',
+  textShadowOffset: {
+    width: 0,
+    height: 4,
+  },
+  textShadowRadius: 4,
+  borderWidth: 4,
+  borderRadius: 20,
+  borderColor: 'purple',
+  color: 'purple',
+  paddingVertical: 20,
+  paddingHorizontal: 40,
+}}>ReferHer</Text>
+        <View className="flex-row justify-center ">
+          <Controller
+            control={control}
+            rules={{
+              required: true,
+            }}
+            render={({ field: { onChange, onBlur, value } }) => (
+              <TextInput
+                className="bg-gray-50 border-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-4/12 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                onBlur={onBlur}
+                onChangeText={onChange}
+                value={value}
+                placeholder="email"
+              />
+            )}
+            name="email"
+          />
+          {errors.email && <Text>This is required.</Text>}
 
-        <Controller
-          control={control}
-          rules={{
-            maxLength: 100,
-          }}
-          render={({ field: { onChange, onBlur, value } }) => (
-            <TextInput
-              className="border-solid border-2 border-b-darkpurple mb-2 p-2 text-lg"
-              onBlur={onBlur}
-              onChangeText={onChange}
-              value={value}
-              placeholder="password"
-              secureTextEntry={true}
-            />
-          )}
-          name="password"
-        />
-        {errors.password && <Text>This is required.</Text>}
-
-        <Button title="Submit" onPress={handleSubmit(onSubmit)} />
+          <Controller
+            control={control}
+            rules={{
+              maxLength: 100,
+            }}
+            render={({ field: { onChange, onBlur, value } }) => (
+              <TextInput
+                className="bg-gray-50 border-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-4/12 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                onBlur={onBlur}
+                onChangeText={onChange}
+                value={value}
+                placeholder="password"
+              />
+            )}
+            name="password"
+          />
+          {errors.password && <Text>This is required.</Text>}
+          <TouchableOpacity className="text-white bg-purple-900  mt-2 justify-center font-medium rounded-lg text-base w-20 h-7  align-content: center items-center " onPress={handleSubmit(onSubmit)}><Text className='text-white'>Submit</Text></TouchableOpacity>
+        </View>
       </View>
     </SafeAreaView>
   );

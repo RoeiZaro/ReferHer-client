@@ -13,6 +13,7 @@ import MainNav from "./screens/Navigate/MainNav";
 const Stack = createNativeStackNavigator();
 
 const App = () => {
+
   return (
     <NavigationContainer>
       <UserProvider>
