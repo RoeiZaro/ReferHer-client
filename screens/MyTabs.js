@@ -3,6 +3,7 @@ import { Text, View } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import * as Icons from "react-native-heroicons/solid";
 import HomePage from "./HomePage";
+import AboutUsPage from "./AboutUsPage";
 import { UserContext } from "../hooks/UserContext";
 
 function Feed() {
@@ -29,6 +30,12 @@ function Notifications() {
   );
 }
 
+function AboutUs() {
+  return (
+    <AboutUsPage/>
+  );
+}
+
 const Tab = createBottomTabNavigator();
 
 export default function MyTabs() {
@@ -52,6 +59,18 @@ export default function MyTabs() {
           ),
         }}
       />
+
+        <Tab.Screen
+        name="AboutUs"
+        component={AboutUs}
+        options={{
+          tabBarLabel:'About Us',
+          tabBarIcon:({color,size})=>(
+            <Icons.LightBulbIcon name='bulb' color={color} size={size}/>
+          ),
+        }}
+        />
+
       <Tab.Screen
         name="Notifications"
         component={Notifications}
