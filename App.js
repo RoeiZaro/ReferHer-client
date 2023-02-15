@@ -2,10 +2,10 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import UserProvider from "./hooks/UserContext";
 import MyTabs from "./screens/MyTabs";
-import HomePage from "./screens/PreLoginPages/HomePage";
+import HomePage from "./screens/PreLoginPages/HomePage"
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import LoginPage from "./screens/PreLoginPages/LoginPage";
-import RegisterPage from "./screens/PreLoginPages/RegisterPage";
+import RegisterPage from "./screens/PreLoginPages/RegisterPage"
 
 
 const Stack = createNativeStackNavigator();
@@ -25,7 +25,7 @@ const IsloggedIn = getData();
 console.log(IsloggedIn._x);
 
 const App = () => {
-  if (IsloggedIn._x)
+  if (1)
     return (
       <NavigationContainer>
         <UserProvider>
