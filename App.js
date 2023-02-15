@@ -1,6 +1,6 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import HomePage from "./screens/HomePage";
+import HomePage from "./screens/PreLoginPages/HomePage";
 import MyTabs from "./screens/MyTabs";
 import UserProvider from "./hooks/UserContext";
 

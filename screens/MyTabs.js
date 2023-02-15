@@ -2,7 +2,7 @@ import * as React from "react";
 import { Text, View } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import * as Icons from "react-native-heroicons/solid";
-import HomePage from "./HomePage";
+import HomePage from "./PreLoginPages/HomePage";
 import { UserContext } from "../hooks/UserContext";
 
 function Feed() {
