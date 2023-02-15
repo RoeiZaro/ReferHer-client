@@ -22,12 +22,7 @@ export default function RegisterPage() {
           required: true,
         }}
         render={({ field: { onChange, onBlur, value } }) => (
-          <TextInput
-            style={styles.input}
-            onBlur={onBlur}
-            onChangeText={onChange}
-            value={value}
-          />
+          <TextInput onBlur={onBlur} onChangeText={onChange} value={value} />
         )}
         name="firstName"
       />
@@ -39,12 +34,7 @@ export default function RegisterPage() {
           maxLength: 100,
         }}
         render={({ field: { onChange, onBlur, value } }) => (
-          <TextInput
-            style={styles.input}
-            onBlur={onBlur}
-            onChangeText={onChange}
-            value={value}
-          />
+          <TextInput onBlur={onBlur} onChangeText={onChange} value={value} />
         )}
         name="lastName"
       />

@@ -6,23 +6,22 @@ import { createContext, useState } from "react";
 export const UserContext = createContext();
 
 const UserProvider = ({ children, data }) => {
-    const navigate = useNavigation();
+  const navigate = useNavigation();
 
-    const [user, setUser] = useState(data);
-    const [token, setToken] = useState(null);
-
-    return (
-        <UserContext.Provider
-            value={{
-                user,
-                setUser,
-                token,
-                setToken,
-            }}
-        >
-            {children}
-        </UserContext.Provider>
-    );
+  const [user, setUser] = useState(data);
+  const [token, setToken] = useState(null);
+  return (
+    <UserContext.Provider
+      value={{
+        user,
+        setUser,
+        token,
+        setToken,
+      }}
+    >
+      {children}
+    </UserContext.Provider>
+  );
 };
 
-export default UserProvider
+export default UserProvider;

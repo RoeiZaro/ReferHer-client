@@ -8,6 +8,7 @@ import LoginPage from "./screens/PreLoginPages/LoginPage";
 import RegisterPage from "./screens/PreLoginPages/RegisterPage";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import MainNav from "./screens/Navigate/MainNav";
 
 const Stack = createNativeStackNavigator();
 
@@ -41,38 +42,46 @@ const App = () => {
     }
   };
 
-  if (token)
-    return (
-      <NavigationContainer>
-        <UserProvider data={data}>
-          <MyTabs />
-        </UserProvider>
-      </NavigationContainer>
-    );
-  else
-    return (
-      <NavigationContainer>
-        <UserProvider data={data}>
-          <Stack.Navigator screenOptions={{ headerShown: false }}>
-            <Stack.Screen
-              name="Homeee"
-              component={HomePage}
-              options={{ title: "Refer-Her" }}
-            />
-            <Stack.Screen
-              name="Login"
-              component={LoginPage}
-              options={{ title: "Login" }}
-            />
-            <Stack.Screen
-              name="Register"
-              component={RegisterPage}
-              options={{ title: "Register" }}
-            />
-          </Stack.Navigator>
-        </UserProvider>
-      </NavigationContainer>
-    );
+  return (
+    <NavigationContainer>
+      <UserProvider data={data}>
+        <MainNav data={data} />
+      </UserProvider>
+    </NavigationContainer>
+  );
+
+  // if (token)
+  // return (
+  //   <NavigationContainer>
+  //     <UserProvider data={data}>
+  //       <MyTabs />
+  //     </UserProvider>
+  //   </NavigationContainer>
+  // );
+  // else
+  //   return (
+  //     <NavigationContainer>
+  //       <UserProvider data={data}>
+  //         <Stack.Navigator screenOptions={{ headerShown: false }}>
+  //           <Stack.Screen
+  //             name="Homeee"
+  //             component={HomePage}
+  //             options={{ title: "Refer-Her" }}
+  //           />
+  //           <Stack.Screen
+  //             name="Login"
+  //             component={LoginPage}
+  //             options={{ title: "Login" }}
+  //           />
+  //           <Stack.Screen
+  //             name="Register"
+  //             component={RegisterPage}
+  //             options={{ title: "Register" }}
+  //           />
+  //         </Stack.Navigator>
+  //       </UserProvider>
+  //     </NavigationContainer>
+  // );
 };
 
 export default App;
