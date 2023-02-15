@@ -1,6 +1,6 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import UserProvider from "./hooks/UserContext";
+import UserProvider from "./hooks/UuserContext";
 import MyTabs from "./screens/MyTabs";
 import HomePage from "./screens/PreLoginPages/HomePage";
 import { useAsyncStorage } from "@react-native-async-storage/async-storage";
@@ -42,6 +42,7 @@ const App = () => {
     }
   };
 
+  console.log(token)
   if (token)
     return (
       <NavigationContainer>
