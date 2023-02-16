@@ -4,28 +4,38 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import * as Icons from "react-native-heroicons/solid";
 import HomePage from "./PreLoginPages/HomePage";
 import AboutUsPage from "./AboutUsPage";
+
+
+import MainTab from "./Tabs/MainTab";
 import ProfileTab from "./Tabs/ProfileTab";
-import MainPage from "./Tabs/MainPage";
 import { UserContext } from "../hooks/UuserContext";
-import ProfileTab from "./Tabs/ProfileTab";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { StatusBar } from "expo-status-bar";
+
 
 
 function Main() {
 
-  return (
-    <MainPage></MainPage>
-      
-    
-  );
-}
 
-function AboutUs() {
-  return <AboutUsPage />;
+  return (
+
+    <>
+      <SafeAreaView className="bg-pink-600 justify-center">
+        <StatusBar style="light" />
+      </SafeAreaView>
+      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+        <Text>Your Notifications is empty!</Text>
+      </View>
+    </>
+
+    <MainPage></MainPage>
+  );
 }
 
 const Tab = createBottomTabNavigator();
 
 export default function MyTabs() {
+  const { data } = React.useContext(UserContext);
   return (
     <Tab.Navigator
       initialRouteName="Feed"
@@ -37,7 +47,7 @@ export default function MyTabs() {
     >
       <Tab.Screen
         name="Feed"
-        component={HomePage}
+        component={MainTab}
         options={{
           tabBarLabel: "Home",
           tabBarIcon: ({ color, size }) => (
@@ -47,8 +57,9 @@ export default function MyTabs() {
       />
 
       <Tab.Screen
-        name="AboutUs"
-        component={AboutUs}
+
+        name="Notifications"
+        component={Notifications}
         options={{
           tabBarLabel: "About Us",
           tabBarIcon: ({ color, size }) => (
@@ -74,6 +85,16 @@ export default function MyTabs() {
           tabBarLabel: "Profile",
           tabBarIcon: ({ color, size }) => (
             <Icons.UserIcon name="account" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="AboutUs"
+        component={AboutUsPage}
+        options={{
+          tabBarLabel: "About Us",
+          tabBarIcon: ({ color, size }) => (
+            <Icons.LightBulbIcon name="bulb" color={color} size={size} />
           ),
         }}
       />
