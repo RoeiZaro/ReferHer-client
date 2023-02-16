@@ -1,9 +1,7 @@
-
 import { View, StyleSheet, Text, ScrollView, Image } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
-
 
 const AboutUsPage = () => {
   return (
@@ -17,35 +15,29 @@ const AboutUsPage = () => {
             AboutUs
           </Text>
 
-
           <Text className="text-white">
             Learn about ReferHer and our obsession with getting more women into
             hi-tech
           </Text>
         </View>
-
-        <ScrollView >
-            <Statusbarr style="purple" />
-            <View className='bg-purple-900 flex-1' >
-                
-                    <Text className='font-extrabold  text-6xl text-pink-500'>AboutUs</Text>
-                
-                    <Text className='text-white' >Learn about ReferHer and our obsession with getting more women into hi-tech</Text>
-                
-            </View>
-
-            <View className="bg-slate-200 flex-1" >
-                <View className='flex-col'>
-                    <Text className='font-extrabold  text-4xl text-pink-500'>ReferHer is all about women empowering women</Text>
-                    <Text>Did you know as of 2022, women only make up 26.7% of the tech industry? And the percentage of women in all tech-related careers has decreased over the last 2 years!
-                    </Text>
-                </View>
-                <View>
-                   <Image source={require('../assets/tmuna1.webp')} 
-                    style={{width: 100, height: 130}} />
-                </View>
-            </View>
-
+        <View className="bg-slate-200 flex-1">
+          <View className="flex-col">
+            <Text className="font-extrabold  text-4xl text-pink-500">
+              ReferHer is all about women empowering women
+            </Text>
+            <Text>
+              Did you know as of 2022, women only make up 26.7% of the tech
+              industry? And the percentage of women in all tech-related careers
+              has decreased over the last 2 years!
+            </Text>
+          </View>
+          <View>
+            <Image
+              source={require("../assets/tmuna1.webp")}
+              style={{ width: 100, height: 130 }}
+            />
+          </View>
+        </View>
 
         <View className="bg-slate-200 flex-1">
           <View className="flex-col">
