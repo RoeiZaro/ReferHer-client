@@ -9,6 +9,11 @@ const ProfileTab = () => {
   const { setData, setToken } = useContext(UserContext);
   const { removeItem } = useAsyncStorage("token");
 
+  //   async () => {
+  //     const galleryStatus =
+  //       await ImagePicker.requestMediaLibraryPermissionsAsync();
+  //     setHasGalleryPermission(galleryStatus.status === "granted");
+
   const deleteItemfromStorage = async (newValue) => {
     await removeItem();
     setToken(null);
@@ -24,7 +29,10 @@ const ProfileTab = () => {
         <Statusbarr style="light" />
       </SafeAreaView>
       <View className="bg-purple-800 flex-1">
-        <Button title="sign-out " onPress={logout} />
+        <View className="flex-row justify-center">
+          <Button title="ProfilePic " onPress={logout} />
+          <Button title="sign-out " onPress={logout} />
+        </View>
       </View>
     </>
   );

@@ -25,7 +25,7 @@ const RegisterPage = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Register</Text>
+      <Text className="text-pink-500 text-3xl ">Register</Text>
       <Controller
         control={control}
         name="firstName"
@@ -126,12 +126,12 @@ const RegisterPage = () => {
     </View>
   );
 };
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+    backgroundColor: "#F5E1FF",
   },
   title: {
     fontSize: 24,
@@ -140,31 +140,39 @@ const styles = StyleSheet.create({
   },
   input: {
     borderWidth: 1,
-    borderColor: "#ccc",
+    borderColor: "#FFCCE5",
     borderRadius: 5,
     width: "80%",
     height: 40,
     padding: 10,
     marginBottom: 10,
+    backgroundColor: "#FFF0F5",
   },
   button: {
-    backgroundColor: "#1e90ff",
+    backgroundColor: "#FF69B4",
     padding: 10,
     borderRadius: 5,
   },
   buttonText: {
-    color: "#fff",
+    color: "#FFFFFF",
     fontWeight: "bold",
     fontSize: 18,
   },
   error: {
-    color: "red",
+    color: "#FF1493",
     marginBottom: 10,
+  },
+  label: {
+    color: "#8B008B",
+    fontWeight: "bold",
+    fontSize: 16,
   },
   row: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
+    marginTop: 20,
+    marginBottom: 10,
   },
 });
 

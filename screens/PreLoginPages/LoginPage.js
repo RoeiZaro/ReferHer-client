@@ -1,4 +1,11 @@
-import { View, Text, Button, TextInput, Alert, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  Button,
+  TextInput,
+  Alert,
+  TouchableOpacity,
+} from "react-native";
 import { useContext, useLayoutEffect } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { UserContext } from "../../hooks/UuserContext";
@@ -28,15 +35,13 @@ export default function LoginPage() {
     },
   });
 
-
   const login = async ({ email, password }) => {
-
     try {
       const res = await axios.post("http://10.0.0.10:3000/login", {
         email,
         password,
       });
-      console.log('login esssndry')
+      console.log("login esssndry");
       if (res.status === 201) {
         alert("user not found");
       }
@@ -57,25 +62,29 @@ export default function LoginPage() {
     console.log(data);
   };
   return (
-    <SafeAreaView >
+    <SafeAreaView>
       <Statusbarr style="dark" />
       <View className="bg-purple-200 basis-full ">
-        <Text style={{
-  fontSize: 64,
-  fontWeight: 'bold',
-  textShadowColor: 'rgba(0, 0, 0, 0.25)',
-  textShadowOffset: {
-    width: 0,
-    height: 4,
-  },
-  textShadowRadius: 4,
-  borderWidth: 4,
-  borderRadius: 20,
-  borderColor: 'purple',
-  color: 'purple',
-  paddingVertical: 20,
-  paddingHorizontal: 40,
-}}>ReferHer</Text>
+        <Text
+          style={{
+            fontSize: 64,
+            fontWeight: "bold",
+            textShadowColor: "rgba(0, 0, 0, 0.25)",
+            textShadowOffset: {
+              width: 0,
+              height: 4,
+            },
+            textShadowRadius: 4,
+            borderWidth: 4,
+            borderRadius: 20,
+            borderColor: "purple",
+            color: "purple",
+            paddingVertical: 20,
+            paddingHorizontal: 40,
+          }}
+        >
+          ReferHer
+        </Text>
         <View className="flex-row justify-center ">
           <Controller
             control={control}
@@ -107,12 +116,18 @@ export default function LoginPage() {
                 onChangeText={onChange}
                 value={value}
                 placeholder="password"
+                secureTextEntry={true}
               />
             )}
             name="password"
           />
           {errors.password && <Text>This is required.</Text>}
-          <TouchableOpacity className="text-white bg-purple-900  mt-2 justify-center font-medium rounded-lg text-base w-20 h-7  align-content: center items-center " onPress={handleSubmit(onSubmit)}><Text className='text-white'>Submit</Text></TouchableOpacity>
+          <TouchableOpacity
+            className="text-white bg-purple-900  mt-2 justify-center font-medium rounded-lg text-base w-20 h-7  align-content: center items-center "
+            onPress={handleSubmit(onSubmit)}
+          >
+            <Text className="text-white">Submit</Text>
+          </TouchableOpacity>
         </View>
       </View>
     </SafeAreaView>
