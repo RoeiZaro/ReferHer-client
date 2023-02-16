@@ -1,10 +1,12 @@
 import { View,StyleSheet, Text, ScrollView,Image } from 'react-native'
 import React from 'react'
+import { StatusBar as Statusbarr } from "expo-status-bar";
 
 const AboutUsPage = () => {
     return (
 
         <ScrollView >
+            <Statusbarr style="purple" />
             <View className='bg-purple-900 flex-1' >
                 
                     <Text className='font-extrabold  text-6xl text-pink-500'>AboutUs</Text>

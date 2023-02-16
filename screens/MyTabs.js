@@ -4,14 +4,18 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import * as Icons from "react-native-heroicons/solid";
 import HomePage from "./PreLoginPages/HomePage";
 import AboutUsPage from "./AboutUsPage";
-
+import ProfileTab from "./Tabs/ProfileTab";
+import MainPage from "./Tabs/MainPage";
+import { UserContext } from "../hooks/UuserContext";
 import ProfileTab from "./Tabs/ProfileTab";
 
-function Notifications() {
+
+function Main() {
+
   return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Notifications!</Text>
-    </View>
+    <MainPage></MainPage>
+      
+    
   );
 }
 
@@ -54,8 +58,8 @@ export default function MyTabs() {
       />
 
       <Tab.Screen
-        name="Notifications"
-        component={Notifications}
+        name="Main"
+        component={Main}
         options={{
           tabBarLabel: "Updates",
           tabBarIcon: ({ color, size }) => (

@@ -40,8 +40,9 @@ export default function HomePage() {
           >
             <Text className="text-white justify-center">Register</Text>
           </TouchableOpacity>
+
         </View>
       </View>
     </>
-  );
+  )
 }
