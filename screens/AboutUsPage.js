@@ -25,7 +25,7 @@ const AboutUsPage = () => {
 
           <View className="bg-slate-200 flex-1">
             <View className="flex-col">
-              <Text className="font-extrabold  text-4xl text-pink-500">
+              <Text className="font-extrabold text-center  text-3xl text-pink-500">
                 ReferHer is all about women empowering women
               </Text>
               <Text className=" text-xl font-bold ">
@@ -37,18 +37,12 @@ const AboutUsPage = () => {
             <View>
               <Image
                 source={require("../assets/tmuna1.webp")}
-                style={{ width: 100, height: 130, marginLeft: 7 }}
+                style={{ width: 100, height: 130, marginLeft: "auto" }}
               />
             </View>
           </View>
 
           <View className="bg-purple-900 flex-1">
-            <View>
-              <Image
-                source={require("../assets/tmuna2.webp")}
-                style={{ width: 200, height: 130 }}
-              />
-            </View>
             <View>
               <Text className="font-extrabold  text-4xl text-pink-500">
                 So how can we get more women into tech?
@@ -60,6 +54,13 @@ const AboutUsPage = () => {
                 challenging to get an internal referral when you don't know
                 anyone at the company you want to apply to.
               </Text>
+            </View>
+            <View>
+              <Image
+                source={require("../assets/tmuna2.webp")}
+                style={{ width: 200, height: 130, text: "center" }}
+                className="ml-24 "
+              />
             </View>
           </View>
 
