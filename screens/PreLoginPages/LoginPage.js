@@ -62,29 +62,14 @@ export default function LoginPage() {
     console.log(data);
   };
   return (
-    <SafeAreaView>
+
+    <SafeAreaView >
+      <View>
       <Statusbarr style="dark" />
+
+      </View>
       <View className="bg-purple-200 basis-full ">
-        <Text
-          style={{
-            fontSize: 64,
-            fontWeight: "bold",
-            textShadowColor: "rgba(0, 0, 0, 0.25)",
-            textShadowOffset: {
-              width: 0,
-              height: 4,
-            },
-            textShadowRadius: 4,
-            borderWidth: 4,
-            borderRadius: 20,
-            borderColor: "purple",
-            color: "purple",
-            paddingVertical: 20,
-            paddingHorizontal: 40,
-          }}
-        >
-          ReferHer
-        </Text>
+        <Text className='font-extrabold  text-6xl text-pink-500 bg-purple-300'>ReferHer</Text>
         <View className="flex-row justify-center ">
           <Controller
             control={control}

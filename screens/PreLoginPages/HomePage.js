@@ -44,8 +44,9 @@ export default function HomePage() {
               Register
             </Text>
           </TouchableOpacity>
+
         </View>
       </View>
     </>
-  );
+  )
 }
