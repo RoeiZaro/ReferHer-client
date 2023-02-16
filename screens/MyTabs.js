@@ -49,17 +49,6 @@ export default function MyTabs() {
       />
 
       <Tab.Screen
-        name="Notifications"
-        component={Notifications}
-        options={{
-          tabBarLabel: "About Us",
-          tabBarIcon: ({ color, size }) => (
-            <Icons.LightBulbIcon name="bulb" color={color} size={size} />
-          ),
-        }}
-      />
-
-      <Tab.Screen
         name="Main"
         component={Main}
         options={{
