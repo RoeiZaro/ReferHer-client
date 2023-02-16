@@ -5,20 +5,14 @@ import * as Icons from "react-native-heroicons/solid";
 import HomePage from "./PreLoginPages/HomePage";
 import AboutUsPage from "./AboutUsPage";
 
-
 import MainTab from "./Tabs/MainTab";
 import ProfileTab from "./Tabs/ProfileTab";
 import { UserContext } from "../hooks/UuserContext";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 
-
-
 function Main() {
-
-
   return (
-
     <>
       <SafeAreaView className="bg-pink-600 justify-center">
         <StatusBar style="light" />
@@ -27,8 +21,6 @@ function Main() {
         <Text>Your Notifications is empty!</Text>
       </View>
     </>
-
-    <MainPage></MainPage>
   );
 }
 
@@ -57,7 +49,6 @@ export default function MyTabs() {
       />
 
       <Tab.Screen
-
         name="Notifications"
         component={Notifications}
         options={{
