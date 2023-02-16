@@ -28,14 +28,16 @@ const AboutUsPage = () => {
               <Text className="font-extrabold text-center  text-3xl text-pink-500">
                 ReferHer is all about women empowering women
               </Text>
-              <Text className=" text-xl font-bold ">
-                Did you know as of 2022, women only make up 26.7% of the tech
-                industry? And the percentage of women in all tech-related
-                careers has decreased over the last 2 years!
-              </Text>
-            </View>
-            <View>
+              <View className="flex-col">
+                <Text className=" text-xl font-bold flex-1">
+                  Did you know as of 2022, women only make up 26.7% of the tech
+                  industry? And the percentage of women in all tech-related
+                  careers has decreased over the last 2 years!
+                </Text>
+              </View>
+
               <Image
+                className=" flex-1"
                 source={require("../assets/tmuna1.webp")}
                 style={{ width: 100, height: 130, marginLeft: "auto" }}
               />
